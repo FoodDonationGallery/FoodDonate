@@ -69,12 +69,12 @@ if(isset($_GET['delete_all'])){
     
     </div>
 
-    <section class="homes6">
+    <!-- <section class="home1">
     <div class="contentts">
-    <span data-aos="fade-up" data-aos-delay="150">Welcome To</span>
+        <span data-aos="fade-up" data-aos-delay="150">Welcome To</span>
         <h3 data-aos="fade-up" data-aos-delay="300">Cart</h3>
     </div>
-    </section>
+    </section> -->
 
 
 <section class="shopping-cart">
