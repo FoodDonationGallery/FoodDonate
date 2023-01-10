@@ -117,7 +117,7 @@ if(isset($_GET['delete_all'])){
       <p>Grand Total : <span>LKR. <?php echo $grand_total; ?>/-</span></p>
       <div class="flex">
          <a href="menu.php" class="option-btn">Continue Donating</a>
-         <a href="checkout.php" class="btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">Proceed to Checkout</a>
+         <a href="menu_checkout.php" class="btn <?php echo ($grand_total > 1)?'':'disabled'; ?>">Proceed to Checkout</a>
       </div>
    </div>
 

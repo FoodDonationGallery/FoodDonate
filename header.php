@@ -5,7 +5,7 @@
         </div> Food Donation Gallery</a>
         <nav class="navbar">
         <?php
-               $select_cart_number = mysqli_query($conn, "SELECT * FROM `m_cart` WHERE user_id = '$user_id'") or die('query failed');
+               $select_cart_number = mysqli_query($conn, "SELECT * FROM `d_cart` WHERE user_id = '$user_id'") or die('query failed');
                $cart_rows_number = mysqli_num_rows($select_cart_number); 
             ?>
 
