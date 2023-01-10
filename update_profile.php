@@ -11,72 +11,31 @@ if(isset($_SESSION['user_id'])){
    header('location:home.php');
 };
 
-if(isset($_POST['submit'])){
+if(isset($_POST['update_profile'])){
 
-   $name = $_POST['name'];
-   $name = filter_var($name, FILTER_SANITIZE_STRING);
+   $update_name = mysqli_real_escape_string($conn, $_POST['update_name']);
+   $update_email = mysqli_real_escape_string($conn, $_POST['update_email']);
+   $update_address = mysqli_real_escape_string($conn, $_POST['update_address']);
 
-   $email = $_POST['email'];
-   $email = filter_var($email, FILTER_SANITIZE_STRING);
-   $number = $_POST['number'];
-   $number = filter_var($number, FILTER_SANITIZE_STRING);
+   mysqli_query($conn, "UPDATE `users` SET name = '$update_name', email = '$update_email',address = '$update_address' WHERE id = '$user_id'") or die('query failed');
 
-   if(!empty($name)){
-      $update_name = $conn->prepare("UPDATE `user` SET name = ? WHERE id = ?");
-      $update_name->execute([$name, $user_id]);
-   }
+   $old_pass = $_POST['old_pass'];
+   $update_pass = mysqli_real_escape_string($conn, md5($_POST['update_pass']));
+   $new_pass = mysqli_real_escape_string($conn, md5($_POST['new_pass']));
+   $confirm_pass = mysqli_real_escape_string($conn, md5($_POST['confirm_pass']));
 
-   if(!empty($email)){
-      $select_email = $conn->prepare("SELECT * FROM `user` WHERE email = ?");
-      $select_email->execute([$email]);
-      if($select_email->rowCount() > 0){
-         $message[] = 'Email Already Taken!';
-      }else{
-         $update_email = $conn->prepare("UPDATE `user` SET email = ? WHERE id = ?");
-         $update_email->execute([$email, $user_id]);
-      }
-   }
-
-   if(!empty($number)){
-      $select_number = $conn->prepare("SELECT * FROM `user` WHERE number = ?");
-      $select_number->execute([$number]);
-      if($select_number->rowCount() > 0){
-         $message[] = 'Number Already Taken!';
-      }else{
-         $update_number = $conn->prepare("UPDATE `user` SET number = ? WHERE id = ?");
-         $update_number->execute([$number, $user_id]);
-      }
-   }
-   
-   $empty_pass = 'da39a3ee5e6b4b0d3255bfef95601890afd80709';
-   $select_prev_pass = $conn->prepare("SELECT password FROM `user` WHERE id = ?");
-   $select_prev_pass->execute([$user_id]);
-   $fetch_prev_pass = $select_prev_pass->fetch(PDO::FETCH_ASSOC);
-   $prev_pass = $fetch_prev_pass['password'];
-   $old_pass = sha1($_POST['old_pass']);
-   $old_pass = filter_var($old_pass, FILTER_SANITIZE_STRING);
-   $new_pass = sha1($_POST['new_pass']);
-   $new_pass = filter_var($new_pass, FILTER_SANITIZE_STRING);
-   $confirm_pass = sha1($_POST['confirm_pass']);
-   $confirm_pass = filter_var($confirm_pass, FILTER_SANITIZE_STRING);
-
-   if($old_pass != $empty_pass){
-      if($old_pass != $prev_pass){
-         $message[] = 'Old Password Not Matched!';
+   if(!empty($update_pass) || !empty($new_pass) || !empty($confirm_pass)){
+      if($update_pass != $old_pass){
+         $message[] = 'Old Password not matched!';
       }elseif($new_pass != $confirm_pass){
-         $message[] = 'Confirm Password Not Matched!';
+         $message[] = 'Confirm Password not matched!';
       }else{
-         if($new_pass != $empty_pass){
-            $update_pass = $conn->prepare("UPDATE `user` SET password = ? WHERE id = ?");
-            $update_pass->execute([$confirm_pass, $user_id]);
-            $message[] = 'Password Updated Successfully!';
-         }else{
-            $message[] = 'Please Enter a New Password!';
-         }
+         mysqli_query($conn, "UPDATE `users` SET password = '$confirm_pass' WHERE id = '$user_id'") or die('query failed');
+         $message[] = 'Password Updated Successfully!';
       }
-   }  
-
+   }
 }
+
  
 ?>
 
@@ -91,7 +50,6 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cart.css">
-    <link rel="stylesheet" href="css/update.css">
     <script src="https://kit.fontawesome.com/4801a7dc21.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -113,18 +71,6 @@ if(isset($_POST['submit'])){
         </nav>
     
         <div class="icons">
-        <?php
-            $count_user_cart_items = $conn->prepare("SELECT * FROM `cart` WHERE user_id = ?");
-            $count_user_cart_items->execute([$user_id]);
-            $total_user_cart_items = $count_user_cart_items->rowCount();
-         ?>
-        <!-- <?php
-            $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
-            $select_profile->execute([$user_id]);
-            if($select_profile->rowCount() > 0){
-            $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);}
-         ?> -->
-
             <i class="fas fa-bars" id="menu-bars"></i>
             <i class="fas fa-search" id="search-icon"></i>
             <a href="profile.php" class="fa-solid fa-user"></a>
@@ -133,43 +79,40 @@ if(isset($_POST['submit'])){
     
     </div>
 
-    <!-- search form  -->
+<!-- form section -->
+<div class="update-profile">
 
-    <form action="" id="search-form">
-        <input type="search" placeholder="Search Here..." name="" id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-        <i class="fas fa-times" id="close"></i>
-    </form>
+   <?php
+      $select = mysqli_query($conn, "SELECT * FROM `users` WHERE id = '$user_id'") or die('query failed');
+      if(mysqli_num_rows($select) > 0){
+         $fetch = mysqli_fetch_assoc($select);
+      }
+   ?>
 
-    <section class="homes9" id="home">
+   <form action="" method="post" enctype="multipart/form-data">
+      <div class="flex">
+         <div class="inputBox">
+            <span>Your Name :</span>
+            <input type="text" name="update_name" value="<?php echo $fetch['name']; ?>" class="box">
+            <span>Your Email :</span>
+            <input type="email" name="update_email" value="<?php echo $fetch['email']; ?>" class="box">
+            <span>Your Address :</span>
+            <input type="address" name="update_address" value="<?php echo $fetch['address']; ?>" class="box">
 
-        <div class="contentt">
-            <h3>WELCOME TO</h3>
-            <span>Update Profile </span>
-        </div>
-
-    </section>
-
-<div class="form-container">
-
-        <form action="" method="post">
-        <h3>Update Profile</h3>
-        <!-- <?php
-            $select_profile = $conn->prepare("SELECT * FROM `user` WHERE id = ?");
-            $select_profile->execute([$user_id]);
-            if($select_profile->rowCount() > 0){
-               $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);}
-         ?> -->
-
-        <input type="text" name="name" placeholder="<?= $fetch_profile['name']; ?>" class="box">
-        <input type="email" name="email" placeholder="<?= $fetch_profile['email']; ?>" class="box">
-        <input type="number" name="number" placeholder="Enter Your Number" class="box" min="0" max="9999999999" maxlength="10">
-        <input type="password" name="old_pass" placeholder="Enter Your Old Password"  class="box">
-        <input type="password" name="new_pass" placeholder="Enter Your New Password"  class="box">
-        <input type="password" name="confirm_pass" placeholder="Confirm Your New Password"  class="box">
-        <input type="submit" name="submit" value="Update Now" class="btn" name="submit">
-
-        </form>
+         </div>
+         <div class="inputBox">
+            <input type="hidden" name="old_pass" value="<?php echo $fetch['password']; ?>">
+            <span>Old Password :</span>
+            <input type="password" name="update_pass" placeholder="Enter Old Password" class="box">
+            <span>New Password :</span>
+            <input type="password" name="new_pass" placeholder="Enter New Password" class="box">
+            <span>Confirm Password :</span>
+            <input type="password" name="confirm_pass" placeholder="Confirm New Password" class="box">
+         </div>
+      </div>
+      <input type="submit" value="Update Profile" name="update_profile" class="btn">
+      <a href="profile.php" class="delete-btn">Go Back</a>
+   </form>
 
 </div>
 

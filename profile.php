@@ -3,26 +3,14 @@
 include 'connect.php';
 
 session_start();
-
+ 
 if(isset($_SESSION['user_id'])){
-   $user_id = $_SESSION['user_id'];
-}else{
-   $user_id = '';
-   header('location:home.php');
-};
-
-if(isset($_POST['submit'])){
-
-   $address = $_POST['area'].', '.$_POST['street'].', '.$_POST['town'].', '.$_POST['district'] .', '. $_POST['country'] .' - '. $_POST['pin_code'];
-   $address = filter_var($address, FILTER_SANITIZE_STRING);
-
-   $update_address = $conn->prepare("UPDATE `user` set address = ? WHERE id = ?");
-   $update_address->execute([$address, $user_id]);
-
-   $message[] = 'Address Saved!';
-
-}
-
+    $user_id = $_SESSION['user_id'];
+ }else{
+    $user_id = '';
+    header('location:home.php');
+ };
+ 
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +24,6 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cart.css">
-    <link rel="stylesheet" href="css/update.css">
     <script src="https://kit.fontawesome.com/4801a7dc21.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -58,13 +45,6 @@ if(isset($_POST['submit'])){
         </nav>
     
         <div class="icons">
-        <!-- <?php
-            $select_profile = $conn->prepare("SELECT * FROM `user` WHERE id = ?");
-            $select_profile->execute([$user_id]);
-            if($select_profile->rowCount() > 0){
-            $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);}
-         ?> -->
-
             <i class="fas fa-bars" id="menu-bars"></i>
             <i class="fas fa-search" id="search-icon"></i>
             <a href="profile.php" class="fa-solid fa-user"></a>
@@ -73,38 +53,26 @@ if(isset($_POST['submit'])){
     
     </div>
 
-    <!-- search form  -->
+    
+    <section class="user-details">
+        <div class="user">
+        <?php
+        $select = mysqli_query($conn, "SELECT * FROM `users` WHERE id = '$user_id'") or die('query failed');
+        if(mysqli_num_rows($select) > 0){
+            $fetch = mysqli_fetch_assoc($select);
+        }
+        ?>
 
-    <form action="" id="search-form">
-        <input type="search" placeholder="Search Here..." name="" id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-        <i class="fas fa-times" id="close"></i>
-    </form>
+        <img src="images/user-icon.png" alt="">
+        <p class="name"><i class="fas fa-user"></i><?php echo $fetch['name']; ?></p>
+        <p class="number"><i class="fas fa-phone"></i><?php echo $fetch['number']; ?></p>
+        <p class="email"><i class="fas fa-envelope"></i><?php echo $fetch['email']; ?></p>
+        <p class="address"><i class="fas fa-map-marker-alt"></i><?php echo $fetch['address']; ?></p>
+        <a href="update_profile.php" class="btn" name="submit">Update Info</a>
 
-    <section class="homes9" id="home">
-
-        <div class="contentt">
-            <h3>WELCOME TO</h3>
-            <span>Update Address </span>
         </div>
 
-    </section>
-
-<div class="form-container">
-
-        <form action="" method="post">
-            <h3>Update Address</h3>
-            <input type="text" class="box" placeholder="Home Name"  maxlength="50" name="area">
-            <input type="text" class="box" placeholder="Street Name"  maxlength="50" name="street">
-            <input type="text" class="box" placeholder="Town Name"  maxlength="50" name="town">
-            <input type="text" class="box" placeholder="District Name"  maxlength="50" name="district">
-            <input type="text" class="box" placeholder="Country Name"  maxlength="50" name="country">
-            <input type="number" class="box" placeholder="Pin Code"  max="999999" min="0" maxlength="6" name="pin_code">
-            <input type="submit" value="Save Address" name="submit" class="btn">
-
-        </form>
-
-</div>
+</section>
 
 
 <!-- footer -->
@@ -152,8 +120,6 @@ if(isset($_POST['submit'])){
 <div class="credit">&copy;2022  Created by <span> Archieves Group </span> | all rights reserved </div>
 
 </section>
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="js/style.js"></script>

@@ -96,12 +96,12 @@ body{
  .form-container form{
     padding:5rem;
     width: 600px;
-    height: 400px;
+    height: 410px;
     border-radius: .5rem;
     box-shadow: var(--box-shadow);
     border:var(--border);
     text-align: center;
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(77, 70, 70, 0.6)),url(../img/l.jpg);
+    background:linear-gradient(rgba(22, 22, 22, 0.7),rgba(63, 63, 63, 0.7)), url(../images/log.jpg) no-repeat;
  }
  
  .form-container form h3{
@@ -115,8 +115,9 @@ body{
     border-radius: .5rem;
     padding:1.2rem 1.4rem;
     font-size: 1.8rem;
+    border:var(--border);
     margin:1rem 0;
-    background-color: rgb(203, 198, 192);
+    background-color: rgb(226, 222, 222);
  }
  
  .form-container form p{
@@ -126,7 +127,7 @@ body{
  }
  
  .form-container form p a{
-    color:  #6f0c32 ;
+    color:darkblue ;
  }
  
  .form-container form p a:hover{
