@@ -146,7 +146,7 @@ section:nth-child(even){
     background: rgb(255, 253, 253);
 
 }
-.homes6{
+.home1{
     margin:0 auto;
     margin-top: 9rem;
     width: 95%;
@@ -161,7 +161,7 @@ section:nth-child(even){
     justify-content: center;
     padding-bottom: 5rem;
 }
-.homes6 .contentts{
+.home1 .contentts{
     text-align: center;
 }
 .contentts span{
