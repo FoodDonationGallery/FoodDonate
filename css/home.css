@@ -1,0 +1,163 @@
+.home1{
+    margin:0 auto;
+    margin-top: 9rem;
+    width: 90%;
+    border-radius: 1rem;
+    background:linear-gradient(rgba(17,17,17,.7),rgba(17,17,17,.7)), url(../img/home.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    min-height: 80vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+.home1 .contentts{
+    text-align: center;
+}
+.contentts span{
+    font-weight: bolder;
+    color: transparent;
+    -webkit-text-stroke: .1rem white;
+    font-size: 4vw;
+    display: block;
+}
+.contentts h3{
+    font-size: 6vw;
+    color:white;
+}
+.contentts p{
+    max-width: 60rem;
+    margin:1rem auto;
+    font-size: 1.8rem;
+    color:#aaa;
+    line-height: 2;
+}
+.btns{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:1rem 3rem;
+    font-size: 2rem;
+    color:#29d9d5;
+    border:.2rem solid #e3e3e3;
+    border-radius: 5rem;
+    cursor: pointer;
+    background: none;
+    font-weight: bold;
+
+}
+.btns:hover{
+    background: #1c1861;
+    color:rgb(255, 255, 255);
+}
+
+/* main body */
+.conten p{
+    color:#666;
+    font-size: 2.3rem;
+    padding:.5rem 0;
+    text-align: center;
+}
+.items .list{
+    padding: .7rem 0;
+    font-size: 2.1rem;
+    color:#666;
+    margin-left: 500px;
+ }
+ .items .list i{
+    margin-right: 1rem;
+ }
+ 
+ .items .list .fa-check{
+    color: limegreen;
+ }
+
+
+.malnutrition{
+    min-height:30vh;
+    background:#f6f6f6;
+  }
+  
+  .malnutrition .card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+  }
+  
+  .malnutrition .card-container .card{
+    width:40rem;
+    height: 48rem;
+    margin:2rem;
+    background: #fff;
+    border-radius: .5rem;
+    border: 2px solid black;
+    box-shadow: 1px solid rgba(0,0,0,.3);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .malnutrition .card-container .card img{
+    height:25rem;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .malnutrition .card-container .cont{
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .malnutrition .card-container .cont .title{
+    color:#192a56;
+    font-size: 3rem;
+  }
+  
+  .malnutrition .card-container .cont p{
+    color:#333;
+    font-size: 1.8rem;
+    padding:1rem;
+  }
+    
+  .body-image{
+    margin-left: 130px;
+  }
+  
+  /* sub body part */
+.causes .causes-mal{
+  display: flex;
+  flex-wrap: wrap;
+  gap:2rem;
+}
+.causes .causes-mal .des{
+  flex:1 1 30rem;
+  border-radius: .5rem;
+  overflow: hidden;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+}
+.causes .causes-mal .des img{
+  height: 25rem;
+  width:100%;
+  object-fit: cover;
+}
+.causes .causes-mal .des .content-part{
+  padding: 2rem;
+}
+.causes .causes-mal .des .content-part h3{
+  font-size:2rem;
+  color:#333;
+}
+.causes .causes-mal .des .content-part h3 i{
+  color:orange;
+}
+.causes .causes-mal .des .content-part p{
+  font-size:1.7rem;
+  color:#666;
+  padding:1rem 0;
+}
+
+
+
+

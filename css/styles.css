@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+:root{
+   --main-color:#2980b9;
+   --red:#e74c3c;
+   --oragen:#f39c12;
+   --white:#fff;
+   --black:#34495e;
+   --light-color:#888;
+   --light-bg:#eee;
+   --border:2px solid var(--black);
+}
+
+*{
+   font-family: 'Nunito', sans-serif;
+   margin: 0; padding: 0;
+   box-sizing: border-box;
+   outline: none; border: none;
+   text-decoration: none;
+}
+
+body{
+   background-color: var(--light-bg);
+   padding-bottom: 70px;
+}
+
+section{
+   padding: 20px;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+
+.disabled{
+   pointer-events: none;
+   user-select: none;
+   opacity: .5;
+}
+
+.btn,
+.option-btn,
+.delete-btn,
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+   padding: 10px 30px;
+   border-radius: 5px;
+   font-size: 18px;
+   cursor: pointer;
+   text-align: center;
+   color: var(--white);
+   text-transform: capitalize;
+}
+
+.btn,
+.option-btn,
+.delete-btn{
+   display: block;
+   width: 100%;
+}
+
+.inline-btn,
+.inline-option-btn,
+.inline-delete-btn{
+   display: inline-block;
+}
+
+.inline-btn,
+.btn{
+   background-color: var(--main-color);
+}
+
+.inline-option-btn,
+.option-btn{
+   background-color: var(--oragen);
+}
+
+.inline-delete-btn,
+.delete-btn{
+   background-color: var(--red);
+}
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover,
+.inline-btn:hover,
+.inline-option-btn:hover,
+.inline-delete-btn:hover{
+   background-color: var(--black);
+}
+
+.flex-btn{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   flex-wrap: wrap;
+}
+
+.heading{
+   text-align: center;
+   margin-bottom: 30px;
+   font-size: 40px;
+   color: var(--black);
+   text-transform: capitalize;
+}
+
+.empty{
+   width: 100%;
+   border-radius: 5px;
+   background-color: var(--white);
+   padding: 20px;
+   text-align: center;
+   color: var(--red);
+   font-size: 20px;
+}
+
+.count-container{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+   background-color: var(--white);
+   border: var(--border);
+   border-radius: 5px;
+   padding: 8px;
+}
+
+.count-container p{
+   padding-left: 10px;
+   font-size: 22px;
+   color: var(--light-color);
+}
+
+.count-container p span{
+   color: var(--main-color);
+}
+
+.products .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 350px);
+   gap: 10px;
+   align-items: flex-start;
+   justify-content: center;
+}
+
+.products .box-container .box{
+   background-color: var(--white);
+   border-radius: 5px;
+   padding: 20px;
+   border: var(--border);
+}
+
+.products .box-container .box .image{
+   height: 200px;
+   width: 100%;
+   object-fit: contain;
+   margin-bottom:20px;
+}
+
+.products .box-container .box .name{
+   font-size: 20px;
+   color: var(--black);
+}
+
+.products .box-container .box .flex{
+   margin: 20px 0;
+   display: flex;
+   gap: 7px;
+}
+
+.products .box-container .box .flex .price{
+   font-size: 20px;
+   color: var(--main-color);
+}
+
+.products .box-container .box .flex .qty{
+   width: 55px;
+   font-size: 17px;
+   border: var(--border);
+   border-radius: 5px;
+   margin-left: auto;
+   padding:5px;
+}
+
+.products .box-container .box .flex .fa-edit{
+   width: 45px;
+   font-size: 17px;
+   cursor: pointer;
+   border-radius: 5px;
+   background-color: var(--oragen);
+   color: var(--white);
+}
+
+.products .box-container .box .flex .fa-edit:hover{
+   background-color: var(--black);
+}
+
+.products .box-container .box .sub-total{
+   margin-bottom: 20px;
+   font-size: 17px;
+   color: var(--black);
+}
+
+.products .box-container .box .sub-total span{
+   color: var(--light-color);
+}
