@@ -48,6 +48,12 @@ if(isset($_POST['order_btn'])){
    }
    
 }
+if (isset($_POST['order_btn'])) {
+   $query = "INSERT INTO `fund`(`amount`) VALUES (100)";
+   mysqli_query($conn, $query);
+   echo "<script>alert('Successfully donated Rs. 100')</script>";
+}
+
 
 ?>
 
@@ -108,7 +114,7 @@ if(isset($_POST['order_btn'])){
    <?php
       }
    }else{
-      echo '<p class="empty">your cart is empty</p>';
+      echo '<p class="empty">Your Cart is Empty</p>';
    }
    ?>
    <div class="grand-total"> Grand Total : <span>LKR. <?php echo $grand_total; ?>/-</span> </div>
@@ -166,7 +172,7 @@ if(isset($_POST['order_btn'])){
             <input type="number" min="0" name="pin_code" required placeholder="Ex. 123456">
          </div>
       </div>
-      <input type="submit" value="Donate Order Now" class="btn" name="order_btn">
+      <input type="submit" value="Menu Order Now" class="btn" name="order_btn">
    </form>
 
 </section>

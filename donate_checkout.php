@@ -108,7 +108,7 @@ if(isset($_POST['order_btn'])){
    <?php
       }
    }else{
-      echo '<p class="empty">your cart is empty</p>';
+      echo '<p class="empty">Your Cart is Empty</p>';
    }
    ?>
    <div class="grand-total"> Grand Total : <span>LKR. <?php echo $grand_total; ?>/-</span> </div>
