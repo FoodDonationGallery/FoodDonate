@@ -53,12 +53,17 @@ if(isset($_POST['add_to_cart'])){
             <img src="img/logo.jpeg" style="width: 100px; height:65px">
         </div> Food Donation Gallery</a>
         <nav class="navbar">
-        <a class="active" href="home.php">Home</a>
+        <?php
+               $select_cart_number = mysqli_query($conn, "SELECT * FROM `m_cart` WHERE user_id = '$user_id'") or die('query failed');
+               $cart_rows_number = mysqli_num_rows($select_cart_number); 
+            ?>
+
+            <a class="active" href="home.php">Home</a>
             <a href="donation.php">Donation</a>
             <a href="menu.php">Order</a>
             <a href="treatment.php">Treatment</a>
             <a href="contact.php">Contact US</a>
-            <a href="menu_cart.php">Cart</a>
+            <a href="menu_cart.php">Cart <span>(<?php echo $cart_rows_number; ?>)</span></a>
 
         </nav>
     
