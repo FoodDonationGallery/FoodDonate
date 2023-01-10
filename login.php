@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/l.css">
+   <link rel="stylesheet" href="css/login.css">
 
 </head>
 <body>
