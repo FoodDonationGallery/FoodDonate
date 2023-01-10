@@ -67,9 +67,9 @@ if(isset($_SESSION['user_id'])){
         <p class="name"><i class="fas fa-user"></i><?php echo $fetch['name']; ?></p>
         <p class="number"><i class="fas fa-phone"></i><?php echo $fetch['number']; ?></p>
         <p class="email"><i class="fas fa-envelope"></i><?php echo $fetch['email']; ?></p>
-        <a href="update_profile.php" class="btn" name="submit">Update Info</a>
         <p class="address"><i class="fas fa-map-marker-alt"></i><?php echo $fetch['address']; ?></p>
-        <a href="update_address.php" class="btn" name="submit">Update Address</a>
+        <a href="update_profile.php" class="btn" name="submit">Update Info</a>
+
         </div>
 
 </section>
