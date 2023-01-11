@@ -40,3 +40,71 @@
     </div>
 
    </section>
+
+       <!-- video gallery -->
+       <div class="containerss">
+
+<h1>Malnutrition of the World</h1>
+
+<div class="video-containe">
+<div class="videos"><video src="images/v1.mp4" muted autoplay></video></div>
+<div class="videos"><video src="images/v2.mp4" muted autoplay></video></div>
+<div class="videos"><video src="images/v3.mp4" muted autoplay></video></div>
+
+</div>
+</div>
+
+<!-- donation school lists -->
+<section class="school">
+    <div class="school-name">
+        <div class="set">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>School 01</h3>
+            <p>MR/Maramba K.V.</p>
+            <h4>Students= 150</h4>
+        </div>
+        <div class="set">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>School 02</h3>
+            <p>MR/Lenama K.V.</p>
+            <h4>Students= 110</h4>
+        </div>
+        <div class="set">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>School 03</h3>
+            <p>MR/Dediyagala K.V.</p>
+            <h4>Students= 90</h4>
+        </div>
+        <div class="set">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>School 04</h3>
+            <p>G/Bategoda K.V.</p>
+            <h4>Students= 80</h4>
+        </div>
+        <div class="set">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>School 05</h3>
+            <p>G/Pankyananda K.V.</p>
+            <h4>Students= 100</h4>
+        </div>
+        <div class="set">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>School 06</h3>
+            <p>MR/Godapitiya K.V.</p>
+            <h4>Students= 70</h4>
+        </div>
+        <div class="set">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>School 07</h3>
+            <p>MR/Akuressa K.V.</p>
+            <h4>Students= 85</h4>
+        </div>
+        <div class="set">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>School 08</h3>
+            <p>MR/Deniyaya K.V.</p>
+            <h4>Students= 65</h4>
+        </div>
+    </div>
+</section>
+
