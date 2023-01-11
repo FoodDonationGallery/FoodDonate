@@ -79,6 +79,7 @@ if(isset($_POST['order_btn'])){
             <a href="menu.php">Order</a>
             <a href="treatment.php">Treatment</a>
             <a href="contact.php">Contact US</a>
+            <a href="donate_orders.php">Donate Orders</a>
         </nav>
     
         <div class="icons">

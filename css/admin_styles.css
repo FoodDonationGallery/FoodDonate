@@ -358,82 +358,6 @@ section{
    width: 100%;
 }
 
-.orders .box-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 30rem);
-   justify-content: center;
-   gap:1.5rem;
-   max-width: 1200px;
-   margin:0 auto;
-   align-items: flex-start;
-}
-
-.orders .box-container .box{
-   background-color: var(--white);
-   padding:2rem;
-   border:var(--border);
-   box-shadow: var(--box-shadow);
-   border-radius: .5rem;
-}
-
-.orders .box-container .box p{
-   padding-bottom: 1rem;
-   font-size: 2rem;
-   color:var(--light-color);
-}
-
-.orders .box-container .box p span{
-   color:var(--purple);
-}
-
-.orders .box-container .box form{
-   text-align: center;
-}
-
-.orders .box-container .box form select{
-   border-radius: .5rem;
-   margin:.5rem 0;
-   width: 100%;
-   background-color: var(--light-bg);
-   border:var(--border);
-   padding:1.2rem 1.4rem;
-   font-size: 1.8rem;
-   color:var(--black);
-}
-
-.users .box-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 30rem);
-   justify-content: center;
-   gap:1.5rem;
-   max-width: 1200px;
-   margin:0 auto;
-   align-items: flex-start;
-}
-
-.users .box-container .box{
-   background-color: var(--white);
-   padding:2rem;
-   border:var(--border);
-   box-shadow: var(--box-shadow);
-   border-radius: .5rem;
-   text-align: center;
-}
-
-.users .box-container .box p{
-   padding-bottom: 1.5rem;
-   font-size: 2rem;
-   color:var(--light-color);
-}
-
-.users .box-container .box p span{
-   color:var(--purple);
-}
-
-.users .box-container .box .delete-btn{
-   margin-top: 0;
-}
-
 .messages .box-container{
    display: grid;
    grid-template-columns: repeat(auto-fit, 35rem);
@@ -465,6 +389,84 @@ section{
 
 .messages .box-container .box .delete-btn{
    margin-top: 0;
+}
+
+/* user account page */
+.users .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 30rem);
+   justify-content: center;
+   gap:1.5rem;
+   max-width: 1200px;
+   margin:0 auto;
+   align-items: flex-start;
+}
+
+.users .box-container .box{
+   background-color: var(--white);
+   padding:2rem;
+   border:var(--border);
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+   text-align: center;
+}
+
+.users .box-container .box p{
+   padding-bottom: 1.5rem;
+   font-size: 2rem;
+   color:#999;
+}
+
+.users .box-container .box p span{
+   color:var(--blue);
+}
+
+.users .box-container .box .delete-btn{
+   margin-top: 0;
+}
+
+/* admin orders */
+.orders .box-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 30rem);
+   justify-content: center;
+   gap:1.5rem;
+   max-width: 1200px;
+   margin:0 auto;
+   align-items: flex-start;
+}
+
+.orders .box-container .box{
+   background-color: var(--white);
+   padding:2rem;
+   border:var(--border);
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+}
+
+.orders .box-container .box p{
+   padding-bottom: 1rem;
+   font-size: 2rem;
+   color:var(--blue);
+}
+
+.orders .box-container .box p span{
+   color:#999;
+}
+
+.orders .box-container .box form{
+   text-align: center;
+}
+
+.orders .box-container .box form select{
+   border-radius: .5rem;
+   margin:.5rem 0;
+   width: 100%;
+   background-color: var(--light-bg);
+   border:var(--border);
+   padding:1.2rem 1.4rem;
+   font-size: 1.8rem;
+   color:var(--black);
 }
 
 

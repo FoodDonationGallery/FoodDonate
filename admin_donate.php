@@ -101,7 +101,11 @@ if(isset($_POST['update_product'])){
         <a href="#" class="logo">
         <div class="lo">
             <img src="img/logo.jpeg" style="width: 100px; height:65px">
-        </div> Food Donation Gallery</a>    
+        </div> Food Donation Gallery</a>  
+        <nav class="navbar">
+            <a href="admin_donate_orders.php">Donation Orders</a>
+        </nav>
+  
         <div class="icons">
             <a href="admin_home.php" class="fa-solid fa-user-xmark"></a>
         </div>

@@ -1,18 +1,34 @@
-<!-- <?php
+<?php
 
 include 'connect.php';
 
 session_start();
 
-if(isset($_SESSION['user_id'])){
-   $user_id = $_SESSION['user_id'];
-}else{
-   $user_id = '';
+$user_id = $_SESSION['user_id'];
+
+if(!isset($user_id)){
    header('location:login.php');
+}
 
-};
+if(isset($_POST['send'])){
 
-?> -->
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $number = $_POST['number'];
+   $msg = mysqli_real_escape_string($conn, $_POST['message']);
+
+   $select_message = mysqli_query($conn, "SELECT * FROM `message` WHERE name = '$name' AND email = '$email' AND number = '$number' AND message = '$msg'") or die('query failed');
+
+   if(mysqli_num_rows($select_message) > 0){
+      $message[] = 'Message Sent Already!';
+   }else{
+      mysqli_query($conn, "INSERT INTO `message`(user_id, name, email, number, message) VALUES('$user_id', '$name', '$email', '$number', '$msg')") or die('query failed');
+      $message[] = 'Message Sent Successfully!';
+   }
+
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,31 +95,6 @@ if(isset($_SESSION['user_id'])){
         <i class="fa-light fa-hands-holding-dollar"></i>  <span>DONATE NOW<span>
     </a>
 
-<!-- <section class="contact_us">
-
-<div class="row_us">
-
-   <div class="image">
-      <img src="images/contact-img.svg" alt="">
-   </div>
-
-   <form action="" method="post">
-      <h3>Tell Us Something!</h3>
-      <input type="text" name="name" maxlength="50" class="box" placeholder="Enter Your Name" required>
-      <input type="email" name="email" maxlength="50" class="box" placeholder="Enter Your Email" required>
-      <input type="number" name="number" min="0" max="9999999999" class="box" placeholder="Enter Your Number" required maxlength="10">
-      <input type="text" name="country" maxlength="50" class="box" placeholder="Enter Your Country" required>
-      <textarea name="msg" class="box" required placeholder="Enter Your Message" maxlength="500" cols="30" rows="10"></textarea>
-      <input type="submit" value="SUBMIT" name="send" class="btn">
-   </form>
-
-</div>
-
-</section>
-
-<div class="location">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0518368287103!2d79.87943122030651!3d6.884394379113556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2fc0237ed5d25%3A0x4c711f0161ac8139!2sThe%20Open%20University%20of%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1672679983116!5m2!1sen!2slk" width="1500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>            
- -->
 
 <div class="contactus">
     <div class="title">
@@ -112,46 +103,39 @@ if(isset($_SESSION['user_id'])){
     <div class="bo">
         <div class="contact form">
         <h3>Send a Message</h3>
-        <form>
+        <form action="" method="post">
             <div class="formBox">
                 <div class="row50">
                     <div class="inputBox">
                         <span>First Name:</span>
-                        <input type="text" placeholder="Thanusha">
-                    </div>
-                    <div class="inputBox">
-                        <span>Last Name:</span>
-                        <input type="text" placeholder="Deemantha">
+                        <input type="text" name="name" required placeholder="Thanusha Demantha" class="box">
                     </div>
                 </div>
 
-                <div class="row50">
                     <div class="inputBox">
                         <span>Email Address:</span>
-                        <input type="text" placeholder="thaushadeemantha12@gmail.com">
+                        <input type="email" name="email" required placeholder="thanusha@gmail.com" class="box">
                     </div>
                     <div class="inputBox">
                         <span>Mobile Number:</span>
-                        <input type="text" placeholder="+94 770456776">
+                        <input type="number" name="number" required placeholder="0770344556" class="box">
                     </div>
-                </div>
 
                 <div class="row100">
                     <div class="inputBox">
                         <span>Message:</span>
-                        <textarea placeholder="Write your message here...."></textarea>
+                        <textarea name="message" class="box" placeholder="Your Message" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
                 
                 <div class="row100">
                     <div class="inputBox">
-                        <input type="submit" value="SEND">
+                    <input type="submit" value="SEND" name="send" class="btn">
                     </div>
                 </div>
-
-
             </div>
         </form>
+        
         </div>
 
         <div class="contact info">
