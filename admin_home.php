@@ -36,6 +36,7 @@ include 'connect.php';
             <a href="admin_menu.php">Order Item</a>
             <a href="admin_user.php">Users</a>
             <a href="admin_message.php">Messages</a>
+            <a href="admin_money.php">Money Donation</a>
 
         </nav>
     
