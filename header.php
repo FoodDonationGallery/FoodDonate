@@ -29,7 +29,7 @@
     </div>
 
         <!-- button -->
-        <a class="float-button" target="_blank" href="donation.php">
+        <a class="float-button" href="donation.php">
         <i class="fa-light fa-hands-holding-dollar"></i>  <span>DONATE NOW<span>
     </a>
 
