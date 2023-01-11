@@ -34,6 +34,9 @@ include 'connect.php';
         <nav class="navbar">
             <a href="admin_donate.php">Donation Item</a>
             <a href="admin_menu.php">Order Item</a>
+            <a href="admin_user.php">Users</a>
+            <a href="admin_message.php">Messages</a>
+
         </nav>
     
         <div class="icons">
