@@ -255,7 +255,7 @@ Lanka. </p>
             <div class="swiper-slide box">
                 <img src="images/pic-2.png" alt="">
                 <p> Fast delivery. Looks awesome. Would buy from seller again.</p>
-                <h3>Natasha Chamba</h3>
+                <h3>Natasha Pathirana</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
