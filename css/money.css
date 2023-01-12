@@ -412,6 +412,7 @@ section:nth-child(even){
     padding:1rem;
     text-align: center;
     background-color:  #918f8b  ;
+    border: 1px solid black;
 
 }
 .school .school-name .set i{
