@@ -954,7 +954,12 @@ section:nth-child(even){
  .checkout form .flex .inputBox{
     flex:1 1 40rem;
  }
- 
+ .checkout form .flex .inputBox .payment-img{
+    width: 100px;
+    height: 100px; 
+}
+    
+
  .checkout form .flex span{
     font-size: 2rem;
     color:black;
@@ -1034,3 +1039,5 @@ section:nth-child(even){
 .placed-orders .box-container .box p span{
     color:var(--black);
 } 
+
+
