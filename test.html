@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>vedio gallary</h1>
+
+        <div class="video-container">
+            <div class="video"><video src="images/video-1.mp4" muted></video></div>
+            <div class="video"><video src="images/video-2.mp4" muted></video></div>
+            <div class="video"><video src="images/video-3.mp4" muted></video></div>
+            <div class="video"><video src="images/video-4.mp4" muted></video></div>
+            <div class="video"><video src="images/video-5.mp4" muted></video></div>
+            <div class="video"><video src="images/video-6.mp4" muted></video></div>
+
+        </div>
+        <div class="popup-video">
+            <span>&times;</span>
+            <video src="images/video-1.mp4" muted autoplay controls></video>
+        </div>
+
+    </div>
+    <script>
+        document.querySelectorAll('.video-container video').forEach(vid => {
+            vid.onclick = () =>{
+                document.querySelector('.popup-video').style.display = 'block';
+                document.querySelector('.popup-video').src = vid.getAttribute('src');
+            }
+            
+        });
+
+        document.querySelector('.popup-video span').onclick = () =>{
+            document.querySelector('.popup-video').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
