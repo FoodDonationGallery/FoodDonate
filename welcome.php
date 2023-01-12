@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/welcome.css">
     <script src="https://kit.fontawesome.com/4801a7dc21.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -43,6 +42,52 @@
 
 </div>
 
+<!-- main content -->
+<div class="grid">
+      <div class="grid-item">
+        <div class="card">
+          <img class="card-img" src="./img/donate.jpg" />
+          <div class="card-content">
+            <h1 class="card-header">Food & Money Donate</h1>
+            <p class="card-text">
+              Rome is known for its stunning <strong> architecture</strong>,
+              with the Colleseum, Pantheon, and Trevi Fountain as the main
+              attractions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card">
+          <img
+            class="card-img" src="./img/f_order.jpg"/>
+          <div class="card-content">
+            <h1 class="card-header">Food Order & Fund</h1>
+            <p class="card-text">
+              One of the world's natural wonders, the iconic Grand Canyon draws
+              oohs and aahs from visitors perched at the edge of its
+              <strong>towering cliffs</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card">
+          <img class="card-img" src="./img/treatments.jpg" />
+          <div class="card-content">
+            <h1 class="card-header">Treatments</h1>
+            <p class="card-text">
+              The Maldives are known for their
+              <strong>natural environment</strong> including the blue ocean,
+              white beaches, and clean air, attracting tourists.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- about section -->
 <section class="about" id="about">
 
     <h3 class="sub-heading"> About US </h3>
