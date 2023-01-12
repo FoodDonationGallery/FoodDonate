@@ -954,10 +954,10 @@ section:nth-child(even){
  .checkout form .flex .inputBox{
     flex:1 1 40rem;
  }
- .checkout form .flex .inputBox .payment-img{
-    width: 100px;
-    height: 100px; 
-}
+ /* .checkout form .flex .inputBox .payment-img{
+    width: 10px;
+    height: 10px; 
+} */
     
 
  .checkout form .flex span{
