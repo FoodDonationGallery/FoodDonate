@@ -24,7 +24,7 @@
         <div class="icons">
             <i class="fas fa-search" id="search-icon"></i>
             <a href="login.php" class="fa-solid fa-user-lock"></a>
-            <!-- <a href="admin_log.php" class="fa-solid fa-user-shield"></a> -->
+
         </div>
     
     </div>
@@ -79,73 +79,6 @@
 
 </section>
 
-<!-- review section -->
-<section class="review" id="review">
-
-    <h1 class="heading"> Customer's <span>Review</span> </h1>
-
-    <div class="swiper mySwiper review-slider">
-
-        <div class="swiper-wrapper wrapper">
-
-            <div class="swiper-slide box">
-                <img src="images/pic-1.png" alt="">
-                <p>So happy with this.. received really quick. Thanks so much.</p>
-                <h3>Amila Bandara</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-
-            <div class="swiper-slide box">
-                <img src="images/pic-2.png" alt="">
-                <p> Fast delivery. Looks awesome. Would buy from seller again.</p>
-                <h3>Natasha Pathirana</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-
-            <div class="swiper-slide box">
-                <img src="images/pic-3.png" alt="">
-                <p>Great description of item. Like new. Very prompt as well.</p>
-                <h3>Naveen Perera</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-
-            <div class="swiper-slide box">
-                <img src="images/pic-4.png" alt="">
-                <p>As described, good quality, arrived quickly, recommended seller.</p>
-                <h3>Amali Gunasekara</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-            </div>
-
-        </div>
-        <div class="swiper-pagination"></div>
-    </div>
-
-</section>
-
 <!-- footer -->
 <section class="footer">
 
@@ -188,7 +121,7 @@
     
     </div>
     
-    <div class="credit">&copy;2022  Created by <span> Archieves Group </span> | all rights reserved </div>
+    <div class="credit">&copy;2022  Created by <span> Archievers Group </span> | all rights reserved </div>
     
     </section>
     
