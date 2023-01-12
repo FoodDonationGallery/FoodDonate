@@ -140,7 +140,8 @@ if (isset($_POST['order_btn'])) {
             <input type="email" name="email" required placeholder="Enter Your Email">
          </div>
          <div class="inputBox">
-            <span>Payment Method :</span>
+            <span>Payment Method :   <img src="images/payment.png" class="payment-img" alt=""></span>
+
             <select name="method">
                <option value="cash on delivery">Cash on Delivery</option>
                <option value="credit card">Credit Card</option>

@@ -115,7 +115,7 @@
             <h3>Newsletter</h3>
             <p>Subscribe for latest updates</p>
             <input type="email" placeholder="Your Email" class="email">
-            <input type="submit" value="subscribe" class="btn">
+            <input type="submit" value="Subscribe" class="btn">
             <img src="images/payment.png" class="payment-img" alt="">
         </div>
     

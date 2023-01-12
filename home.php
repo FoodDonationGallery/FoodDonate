@@ -64,13 +64,13 @@ if(!isset($user_id)){
         <p data-aos="fade-up" data-aos-delay="450">Malnutrition is a major threat of Sri Lanka nowadays. Most of the time rural 
 school students face these malnutrition problems. So, we made a solution for it. People can easily make donations for school students to reduce malnutrition of Sri 
 Lanka. </p>
-        <a data-aos="fade-up" data-aos-delay="600" href="donation.php" class="btns">Donate Now</a>
+        <a data-aos="fade-up" data-aos-delay="600" href="money.php" class="btns">Money Donate Now</a>
     </div>
 
 </section>
 
     <!-- button -->
-    <a class="float-button" target="_blank" href="donation.php">
+    <a class="float-button" href="donation.php">
     <span>DONATE NOW<span>
     </a>
 
@@ -255,7 +255,7 @@ Lanka. </p>
             <div class="swiper-slide box">
                 <img src="images/pic-2.png" alt="">
                 <p> Fast delivery. Looks awesome. Would buy from seller again.</p>
-                <h3>Natasha Chamba</h3>
+                <h3>Natasha Pathirana</h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>

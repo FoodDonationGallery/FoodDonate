@@ -60,7 +60,7 @@
    </section>
 
         <!-- button -->
-        <a class="float-button" target="_blank" href="donation.php">
+        <a class="float-button" href="donation.php">
         <i class="fa-light fa-hands-holding-dollar"></i>  <span>DONATE NOW<span>
     </a>
 
@@ -245,7 +245,7 @@
         <h3>Newsletter</h3>
         <p>Subscribe for latest updates</p>
         <input type="email" placeholder="Your Email" class="email">
-        <input type="submit" value="subscribe" class="btn">
+        <input type="submit" value="Subscribe" class="btn">
         <img src="images/payment.png" class="payment-img" alt="">
     </div>
 
