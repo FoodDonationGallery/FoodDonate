@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> Contact Us</title>
+        <link rel="stylesheet" href="contact.css"/>
+        <link rel="icon" type="image/x-icon" href="./logo.jpg">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+    <body>
+
+<!-- Hero banner for Contact Us page-->
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1> Wellcome to Contact Us page</h1>
+                <p> If you have any problem or feedback please write us using this forum</p>
+            </div>
+        </div>
+
+        <!-- Contact Us forum-->
+        <div class="container">
+            <form action="second.php" method="post">
+               <lable for ="fname"> First Name</lable>
+               <input type="text" id="fname" name="first_name" placeholder="Enter your name">
+
+               <lable for ="lname">Last Name</lable>
+               <input type="text" id="lname" name="last_name" placeholder="Enter your last name">
+
+               <lable for="email"> Enter your Email</lable>
+               <input type="text" id="email" name="email" place holder ="Enter your Email Address">
+
+               <lable for="phone">Enter Your Phone Number (Optional)</lable>
+               <input type="text" id="phone" name="phone" placeholder="Enter Your Phone Number">
+
+               <lable for ="country"> Country</lable>
+               <input type="text" id="country" name="country" placeholder="Enter your country">
+
+               <lable for="subject"> Subject</lable>
+               <textarea id="subject" name="subject" placeholder="Enter your problem or Feedback" style="height:200px"></textarea>
+
+               <input type="submit"  name="submit" class="form-btn">
+            </forum>
+        <!-- Google map -->
+        <div >
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90485.26273825447!2d79.7875445764264!3d6.937315491058567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b98d9f6559f%3A0x4e2e9a677f0608d3!2sOpen%20University!5e0!3m2!1ssi!2slk!4v1671153963908!5m2!1ssi!2slk" width="600" height="450" style="border:0;width:100%; height:500px;display:flex; filter:invert(100%); align-items: center; justify-content: center;flex-direction: column;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+
+<!---- script file for form validation and get massege to email address----->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+ <script>
+
+
+     const constraints = {
+         first_name: {
+             presence: { allowEmpty: false }
+         },
+         last_name:{
+            presence: {allowEmpty: false}
+         },
+         email: {
+             presence: { allowEmpty: false },
+             email: true
+         },
+         phone:{
+            presence:{allowEmpty: false}
+         },
+         country:{
+            presence:{allowEmpty: false}
+         },
+         subject: {
+             presence: { allowEmpty: false }
+         }
+     };
+
+     const form = document.getElementById('contact-form');
+     form.addEventListener('submit', function (event) {
+
+         const formValues = {
+             first_name: form.elements.first_name.value,
+             last_name: form.elements.last_name.value,
+             email: form.elements.email.value,
+             phone: form.elements.phone.value,
+             Country: form.elements.country.value,
+             subject: form.elements.subject.value
+         };
+
+
+         const errors = validate(formValues, constraints);
+         if (errors) {
+             event.preventDefault();
+             const errorMessage = Object
+                 .values(errors)
+                 .map(function (fieldValues) {
+                     return fieldValues.join(', ')
+                 })
+                 .join("\n");
+
+             alert(errorMessage);
+         }
+     }, false);
+
+
+window.onload = fadeOut;
+ </script>
+</body>
+</html>

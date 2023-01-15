@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> feedback</title>
+        <link rel="stylesheet" href="./contact.css">
+        <link rel="icon" type="image/x-icon" href="./logo.jpg">
+    </head>
+    <body>
+        <!----Hero banner-->
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1> Thank For your feedback</h1>
+                <p>Thanks for your feedback, We will contact you soon as posible </p>
+            </div>
+        </div>
+        
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 4</div>
+      <img src="./piyumi.jpeg" style="width:50%">
+      <div class="text">Hi....!! I'm piumi paranavithana, Leader of this project</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 4</div>
+      <img src="./yashora.PNG" style="width:50%">
+      <div class="text">Hi.....!! I'm Yashora UI and UX designer of this project</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="./Dulaj.JPG" style="width:50%">
+      <div class="text">Hi......!! I'm Dulaj yapa , Backend developer</div>
+    </div>
+    
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="./Thanusha.jpg" style="width: 500px; text-align: center;">
+        <div class="text">Hi.....!! I'm Thanusha, frontend developer</div>
+    </div>
+      
+</div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
+        <!---- Google map-->
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90485.26273825447!2d79.7875445764264!3d6.937315491058567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25b98d9f6559f%3A0x4e2e9a677f0608d3!2sOpen%20University!5e0!3m2!1ssi!2slk!4v1671153963908!5m2!1ssi!2slk" width="600" height="450" style="border:0;width:100%; height:500px;display:flex; filter:invert(100%); align-items: center; justify-content: center;flex-direction: column;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+        </div>
+    </body>
+</html>
