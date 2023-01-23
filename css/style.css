@@ -207,6 +207,7 @@ section:nth-child(even){
     font-size: 5rem;
 }
 
+/* about section*/
 .about .row{
     display: flex;
     flex-wrap: wrap;
@@ -1044,12 +1045,14 @@ section:nth-child(even){
 
 /* main content */
 .grid {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
     display: grid;
     width: 114em;
     grid-gap: 6rem;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     align-items: start;
-    margin-left: 190px;
+    margin-left: 150px;
   }
   .grid-item {
     background-color: #e5e8e8 ;
