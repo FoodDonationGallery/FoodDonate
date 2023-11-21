@@ -117,12 +117,6 @@ if(isset($_SESSION['user_id'])){
 
 </div>
 
-<div class="credit">&copy;2022  Created by <span> Archieves Group </span> | all rights reserved </div>
+<div class="credit">&copy;2023  Created by <span> Achievers Group </span> | All Rights Reserved </div>
 
 </section>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="js/style.js"></script>
-
-</body>
-</html>

@@ -215,7 +215,7 @@ if(isset($_POST['send'])){
 
 </div>
 
-<div class="credit">&copy;2022  Created by <span> Archieves Group </span> | all rights reserved </div>
+<div class="credit">&copy;2023  Created by <span> Achievers Group </span> | All Rights Reserved </div>
 
 </section>
 
